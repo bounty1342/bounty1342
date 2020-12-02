@@ -5,7 +5,8 @@
 <h1 align="left"><img src="https://raw.githubusercontent.com/sidbelbase/sidbelbase/master/wave.gif" width="30px"><strong> Hello, I'm <a href="https://www.linkedin.com/in/favierj">Jeremy.</a></strong>
 </h1>
 
-<h3 align="left"><strong>Co-Funder of <a href="https://easivio.com">Easivio SAS</a>. Flutter enthusiast. Dart ❤️ , not 🎯 </strong></h3>
+<h3 align="left"><strong>Co-Funder of <a href="https://easivio.com">Easivio SAS</a>, a Day to Day application Dashboard.</strong></h3>
+<h4 align="left">Flutter enthusiast. Dart ❤️ , not 🎯 </h4>
 <h4 align="left"><strong>Our team can develop or assist on your next mobile project. :iphone:</strong></h4>
 </p>
 
