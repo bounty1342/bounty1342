@@ -2,7 +2,7 @@
 <img align="right" height="auto"  width="380" src="https://github-readme-stats.vercel.app/api?username=bounty1342&count_private=true&show_icons=true&theme=react&bg_color=272929&icon_color=2bc8fe&title_color=2bc8fe&custom_title=Github%20Stats"/>
 
 
-<h1 align="left"><img src="https://raw.githubusercontent.com/sidbelbase/sidbelbase/master/wave.gif" width="30px"><strong> Hello, I'm <a href="https://www.linkedin.com/in/favierj">Jeremy Favier.</a></strong>
+<h1 align="left"><img src="https://raw.githubusercontent.com/sidbelbase/sidbelbase/master/wave.gif" width="30px"><strong> Hello, I'm <a href="https://www.linkedin.com/in/favierj">Jeremy.</a></strong>
 </h1>
 
 <h3 align="left"><strong>Co-Funder of <a href="https://easivio.com">Easivio SAS</a>. Flutter enthusiast. Dart ❤️ , not 🎯 </strong></h3>
