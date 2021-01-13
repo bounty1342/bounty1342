@@ -46,7 +46,7 @@ const Easivio = {
 <a target="_blank" href="https://twitter.com/easvio">
 <img src="https://img.shields.io/badge/easvio-1ca0f1?style=for-the-badge&logo=twitter&logoColor=white&link=https://twitter.com/easvio" alt="Twitter Badge">
 </a>
-<a target="_blank" href="https://instagram.com/sidbelbase/">
+<a target="_blank" href="https://instagram.com/easivioapp/">
 <img src="https://img.shields.io/badge/-easvio-E1306C?style=for-the-badge&logo=Instagram&logoColor=white&link=https://instagram.com/easvio/" alt="Instagram Badge">
 </a>
 <a target="_blank" href="https://www.youtube.com/channel/UCC2zf3suaZBAUmf0q6s1WdQ">
