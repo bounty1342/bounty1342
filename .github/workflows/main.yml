@@ -11,28 +11,28 @@ jobs:
     steps:
     - uses: konradpabjan/move-labeled-or-milestoned-issue@v2.0
       with:
-        action-token: "${{ secrets.LABEL_MOVER_TOKEN }}"
+        action-token: "${{ secrets.GITHUB_TOKEN }}"
         project-url: "https://github.com/bounty1342/bounty1342/projects/1"
         column-name: "To do"
         label-name: "todo"
         columns-to-ignore: "*"
     - uses: konradpabjan/move-labeled-or-milestoned-issue@v2.0
       with:
-        action-token: "${{ secrets.LABEL_MOVER_TOKEN }}"
+        action-token: "${{ secrets.GITHUB_TOKEN }}"
         project-url: "https://github.com/bounty1342/bounty1342/projects/1"
         column-name: "In Progress"
         label-name: "wip"
         columns-to-ignore: "*"
     - uses: konradpabjan/move-labeled-or-milestoned-issue@v2.0
       with:
-        action-token: "${{ secrets.LABEL_MOVER_TOKEN }}"
+        action-token: "${{ secrets.GITHUB_TOKEN }}"
         project-url: "https://github.com/bounty1342/bounty1342/projects/1"
         column-name: "To Review"
         label-name: "To Review"
         columns-to-ignore: "*"
     - uses: konradpabjan/move-labeled-or-milestoned-issue@v2.0
       with:
-        action-token: "${{ secrets.LABEL_MOVER_TOKEN }}"
+        action-token: "${{ secrets.GITHUB_TOKEN }}"
         project-url: "https://github.com/bounty1342/bounty1342/projects/1"
         column-name: "Done"
         label-name: "Done"
