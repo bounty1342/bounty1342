@@ -3,5 +3,9 @@ test:
     - 'todo'
   In Progress:
     - 'wip'
+  To Review:
+    - 'To review'
+  Review in progress:
+    - 'In Review'
   Done:
     - 'Done'
