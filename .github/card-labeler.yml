@@ -1,0 +1,7 @@
+test:
+  To Do:
+    - 'todo'
+  In Progress:
+    - 'wip'
+  Done:
+    - 'Done'
