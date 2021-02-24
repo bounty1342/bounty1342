@@ -34,6 +34,13 @@ jobs:
       with:
         action-token: "${{ secrets.GITHUB_TOKEN }}"
         project-url: "https://github.com/bounty1342/bounty1342/projects/1"
+        column-name: "Review in progress"
+        label-name: "In Review"
+        columns-to-ignore: ""
+    - uses: konradpabjan/move-labeled-or-milestoned-issue@v2.0
+      with:
+        action-token: "${{ secrets.GITHUB_TOKEN }}"
+        project-url: "https://github.com/bounty1342/bounty1342/projects/1"
         column-name: "Done"
         label-name: "Done"
         columns-to-ignore: ""
