@@ -47,12 +47,12 @@ const Easivio = {
 <img src="https://img.shields.io/badge/easivio-1ca0f1?style=for-the-badge&logo=twitter&logoColor=white&link=https://twitter.com/easivio" alt="Twitter Badge">
 </a>
 <a target="_blank" href="https://instagram.com/easivioapp/">
-<img src="https://img.shields.io/badge/-easvio-E1306C?style=for-the-badge&logo=Instagram&logoColor=white&link=https://instagram.com/easvio/" alt="Instagram Badge">
+<img src="https://img.shields.io/badge/-easivio-E1306C?style=for-the-badge&logo=Instagram&logoColor=white&link=https://instagram.com/easivio/" alt="Instagram Badge">
 </a>
 <a target="_blank" href="https://www.youtube.com/channel/UCC2zf3suaZBAUmf0q6s1WdQ">
-<img src="https://img.shields.io/badge/-easvio-FF0000?style=for-the-badge&logo=Youtube&logoColor=white&link=https://www.youtube.com/channel/UCC2zf3suaZBAUmf0q6s1WdQ" alt="Youtube Badge">
+<img src="https://img.shields.io/badge/-easivio-FF0000?style=for-the-badge&logo=Youtube&logoColor=white&link=https://www.youtube.com/channel/UCC2zf3suaZBAUmf0q6s1WdQ" alt="Youtube Badge">
 </a>
 <a target="_blank" href="https://easivio.com">
-<img src="https://img.shields.io/badge/-easvio-000000?style=for-the-badge&logo=Google%20Chrome&logoColor=white&link=https://easivio.com" alt="Chrome Badge">
+<img src="https://img.shields.io/badge/-easivio-000000?style=for-the-badge&logo=Google%20Chrome&logoColor=white&link=https://easivio.com" alt="Chrome Badge">
 </a>
 </p>
