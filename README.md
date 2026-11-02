@@ -114,8 +114,7 @@
   <img src="https://raw.githubusercontent.com/bounty1342/bounty1342/main/assets/title-writing-light.svg" width="100%" alt="06 / Writing: notes from the audit desk, in French.">
 </picture>
 
-<!-- BLOG-POST-LIST:START -->
-- [1000 warnings supprimés par des agents IA, que faut-il vérifier ?](https://audit.devlopn.com/blog/lints-agents-dette-invisible/) <sub>· Oct 11, 2026</sub>
+<!-- BLOG-POST-LIST:START -->- [1000 warnings supprimés par des agents IA, que faut-il vérifier ?](https://audit.devlopn.com/blog/lints-agents-dette-invisible/) <sub>· Oct 11, 2026</sub>
 - [Un assetlinks.json placeholder en prod, et vos deeplinks sont interceptables](https://audit.devlopn.com/blog/assetlinks-json-placeholder-prod/) <sub>· Oct 8, 2026</sub>
 - [Le rôle GCS « lecture seule » qui expose la liste complète de vos fichiers](https://audit.devlopn.com/blog/gcs-objectviewer-legacyobjectreader/) <sub>· Oct 6, 2026</sub>
 - [Cloudflare devant ma Cloud Function, et pourtant zéro cache — le piège des en-têtes](https://audit.devlopn.com/blog/cloudflare-cdn-devant-cloud-function-gcp/) <sub>· Sep 18, 2026</sub>
