@@ -119,8 +119,7 @@
 - [Un assetlinks.json placeholder en prod, et vos deeplinks sont interceptables](https://audit.devlopn.com/blog/assetlinks-json-placeholder-prod/) <sub>· Oct 8, 2026</sub>
 - [Le rôle GCS « lecture seule » qui expose la liste complète de vos fichiers](https://audit.devlopn.com/blog/gcs-objectviewer-legacyobjectreader/) <sub>· Oct 6, 2026</sub>
 - [Cloudflare devant ma Cloud Function, et pourtant zéro cache — le piège des en-têtes](https://audit.devlopn.com/blog/cloudflare-cdn-devant-cloud-function-gcp/) <sub>· Sep 18, 2026</sub>
-- [ITSAppUsesNonExemptEncryption = false — le réflexe faux des apps Flutter qui chiffrent](https://audit.devlopn.com/blog/chiffrement-app-store-declaration-export/) <sub>· Sep 16, 2026</sub>
-<!-- BLOG-POST-LIST:END -->
+- [ITSAppUsesNonExemptEncryption = false — le réflexe faux des apps Flutter qui chiffrent](https://audit.devlopn.com/blog/chiffrement-app-store-declaration-export/) <sub>· Sep 16, 2026</sub><!-- BLOG-POST-LIST:END -->
 
 <sub>→ <a href="https://audit.devlopn.com/blog/">All articles</a> · <a href="https://audit.devlopn.com/blog/feed.xml">RSS</a></sub>
 
