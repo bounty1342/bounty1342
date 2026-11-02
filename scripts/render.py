@@ -68,6 +68,10 @@ EXPERTISE = [
      "Does the team need technical direction? I help weigh architecture choices, "
      "review code and share knowledge through day-to-day collaboration.",
      ["TECH LEAD · CODE REVIEW", "MENTORING · PRODUCT THINKING"]),
+    ("Put AI agents to work, safely",
+     "Are coding agents writing more of your code? I help frame them with lints, tests "
+     "and a clear definition of done, and I review what they produce before it ships.",
+     ["AI AGENTS · CODE REVIEW", "LINTS · TESTS · DEFINITION OF DONE"]),
 ]
 
 EXPERIENCE = [
@@ -168,7 +172,8 @@ SECTIONS = {
                "LinkedIn excerpts · French originals translated into English."),
     "writing": ("06 / WRITING", "Notes from the audit desk",
                 "Field notes on Flutter, iOS and Android, published in French on the DEVLOPN Audit blog."),
-    "toolbox": ("07 / TOOLBOX", "What I ship with", None),
+    "toolbox": ("07 / TOOLBOX", "What I ship with",
+                "Plus a few shadow clones. None of them ships unreviewed."),
     "activity": ("08 / ACTIVITY", "Commit by commit",
                  "Most of my work lives in private client repositories."),
 }
@@ -398,7 +403,7 @@ def header(theme: str) -> Svg:
     t = THEMES[theme]
     s = Svg(1200, 520, "Jérémy Favier — Freelance Flutter Lead Developer",
             "From code to product, with perspective. Architecture, CI/CD and technical "
-            "leadership; technical audits of Flutter apps. Lyon, France and remote.")
+            "leadership; AI-assisted delivery and Flutter audits. Lyon, France and remote.")
     s.defs.append('<clipPath id="hero"><rect x="624" y="28" width="548" height="464" rx="18"/></clipPath>')
     s.add(f'<rect x=".5" y=".5" width="1199" height="519" rx="24" fill="{t["bg"]}" stroke="{t["line"]}"/>')
     x = 60
@@ -427,7 +432,7 @@ def header(theme: str) -> Svg:
           f'stroke-dasharray="{length:.0f}" style="--len:{length:.0f};animation-delay:.8s"/>')
     s.add(f'<g class="rise" {delay(0.5)}>',
           s.text(x, 418, "Architecture · CI/CD · Technical lead", "sans", 20, 450, t["muted"]),
-          s.text(x, 448, "Technical audits · Flutter / Dart", "sans", 20, 450, t["muted"]),
+          s.text(x, 448, "AI-assisted delivery · Flutter audits", "sans", 20, 450, t["muted"]),
           "</g>")
     s.add(f'<g class="rise" {delay(0.6)}>',
           f'<line x1="{x}" y1="468" x2="568" y2="468" stroke="{t["line"]}"/>',
@@ -506,27 +511,31 @@ def section_title(theme: str, key: str) -> Svg:
 
 
 def expertise(theme: str) -> Svg:
+    """Expertise cards on a two-column grid."""
     t = THEMES[theme]
-    gap, w = 24, (1198 - 48) / 3
-    pad = 32
+    cols, gap, pad = 2, 24, 32
+    w = (1198 - gap * (cols - 1)) / cols
     body = [wrap(text, w - 2 * pad, size=19) for _, text, _ in EXPERTISE]
     n = max(len(b) for b in body)
     title_size = 27
     while max(measure(e[0], "sans", title_size, 700, -0.6) for e in EXPERTISE) > w - 2 * pad:
         title_size -= 1
-    h = pad + 20 + 26 + 46 + n * 30 + 26 + 60 + pad
-    s = Svg(1200, h + 2, "Expertise: build to last, make delivery dependable, help the team move forward",
+    ch = pad + 20 + 26 + 46 + n * 30 + 26 + 60 + pad
+    rows = math.ceil(len(EXPERTISE) / cols)
+    h = rows * ch + (rows - 1) * gap
+    s = Svg(1200, h + 2, "Expertise: " + ", ".join(e[0].lower() for e in EXPERTISE),
             " ".join(f"{a}. {b}" for a, b, _ in EXPERTISE))
     for i, (title, _, tags) in enumerate(EXPERTISE):
-        x = 1 + i * (w + gap)
-        y = pad + 1
-        s.add(f'<g class="rise" {delay(i * 0.12)}>',
-              f'<rect x="{x:.1f}" y="1" width="{w:.1f}" height="{h:.1f}" rx="20" fill="{t["bg"]}" stroke="{t["line"]}"/>',
+        x = 1 + (i % cols) * (w + gap)
+        top = 1 + (i // cols) * (ch + gap)
+        y = top + pad
+        s.add(f'<g class="rise" {delay(i * 0.1)}>',
+              f'<rect x="{x:.1f}" y="{top:.1f}" width="{w:.1f}" height="{ch:.1f}" rx="20" fill="{t["bg"]}" stroke="{t["line"]}"/>',
               s.text(x + pad, y + 20, f"0{i + 1}", "mono", 15, 600, t["orangeText"], ls=1.2),
               s.text(x + pad, y + 64, title, "sans", title_size, 700, t["ink"], ls=-0.6))
         for j, line in enumerate(body[i]):
             s.add(s.text(x + pad, y + 104 + j * 30, line, "sans", 19, 420, t["muted"]))
-        ty = h - pad - 42
+        ty = top + ch - pad - 42
         s.add(f'<line x1="{x + pad:.1f}" y1="{ty - 18:.1f}" x2="{x + w - pad:.1f}" y2="{ty - 18:.1f}" stroke="{t["line"]}"/>')
         for j, tag in enumerate(tags):
             s.add(s.text(x + pad, ty + 8 + j * 24, tag, "mono", 13, 500, t["ink"], ls=0.8))

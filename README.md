@@ -6,7 +6,7 @@
 <a href="https://devlopn.com/en/">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/bounty1342/bounty1342/main/assets/header-dark.svg">
-    <img src="https://raw.githubusercontent.com/bounty1342/bounty1342/main/assets/header-light.svg" width="100%" alt="Jérémy Favier, freelance Flutter lead developer based in Lyon and working remotely. From code to product, with perspective.">
+    <img src="https://raw.githubusercontent.com/bounty1342/bounty1342/main/assets/header-light.svg" width="100%" alt="Jérémy Favier, freelance Flutter lead developer based in Lyon and working remotely. From code to product, with perspective. Architecture, CI/CD, technical lead, AI-assisted delivery and Flutter audits.">
   </picture>
 </a>
 
@@ -41,7 +41,7 @@
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/bounty1342/bounty1342/main/assets/expertise-dark.svg">
-  <img src="https://raw.githubusercontent.com/bounty1342/bounty1342/main/assets/expertise-light.svg" width="100%" alt="Build to last: clarify responsibilities, manage state and prioritise technical debt (Flutter, Dart, BLoC, Riverpod, Clean Architecture). Make delivery dependable: automate delivery, test critical journeys and improve production monitoring (CI/CD, Fastlane, GitHub Actions, Firebase, AWS, Crashlytics). Help the team move forward: weigh architecture choices, review code and share knowledge (tech lead, code review, mentoring, product thinking).">
+  <img src="https://raw.githubusercontent.com/bounty1342/bounty1342/main/assets/expertise-light.svg" width="100%" alt="Build to last: clarify responsibilities, manage state and prioritise technical debt (Flutter, Dart, BLoC, Riverpod, Clean Architecture). Make delivery dependable: automate delivery, test critical journeys and improve production monitoring (CI/CD, Fastlane, GitHub Actions, Firebase, AWS, Crashlytics). Help the team move forward: weigh architecture choices, review code and share knowledge (tech lead, code review, mentoring, product thinking). Put AI agents to work, safely: frame coding agents with lints, tests and a clear definition of done, and review what they produce before it ships.">
 </picture>
 
 <br><br>
@@ -127,7 +127,7 @@
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/bounty1342/bounty1342/main/assets/title-toolbox-dark.svg">
-  <img src="https://raw.githubusercontent.com/bounty1342/bounty1342/main/assets/title-toolbox-light.svg" width="100%" alt="07 / Toolbox: what I ship with.">
+  <img src="https://raw.githubusercontent.com/bounty1342/bounty1342/main/assets/title-toolbox-light.svg" width="100%" alt="07 / Toolbox: what I ship with, plus a few shadow clones. None of them ships unreviewed.">
 </picture>
 
 <picture>
@@ -135,7 +135,7 @@
   <img src="https://skillicons.dev/icons?i=flutter%2Cdart%2Ckotlin%2Cswift%2Cfirebase%2Caws%2Cgithubactions%2Cts%2Creact%2Cnextjs%2Cnestjs%2Csupabase%2Castro%2Cfigma&theme=light&perline=14" alt="Flutter, Dart, Kotlin, Swift, Firebase, AWS, GitHub Actions, TypeScript, React, Next.js, NestJS, Supabase, Astro, Figma">
 </picture>
 
-<sub>BLoC · Riverpod · Clean Architecture · Fastlane · Bitrise · Crashlytics · AWS Lambda · DynamoDB · Cognito · unit, widget & golden tests</sub>
+<sub>BLoC · Riverpod · Clean Architecture · Fastlane · Bitrise · Crashlytics · AWS Lambda · DynamoDB · Cognito · unit, widget & golden tests · Claude Code & AI agents</sub>
 
 <br><br>
 
