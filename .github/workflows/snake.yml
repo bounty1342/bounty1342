@@ -1,0 +1,31 @@
+name: Contribution snake
+
+on:
+  schedule:
+    - cron: "17 4 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Generate the snake in the DEVLOPN palette
+        uses: Platane/snk@v3
+        with:
+          github_user_name: ${{ github.repository_owner }}
+          outputs: |
+            dist/github-snake.svg?color_snake=#e65c36&color_dots=#eceae2,#f6cdb9,#f0a07f,#e65c36,#b4400f
+            dist/github-snake-dark.svg?palette=github-dark&color_snake=#ed7956&color_dots=#1f221d,#4b2d22,#7a3c26,#b8502f,#ed7956
+
+      - name: Publish to the output branch
+        uses: crazy-max/ghaction-github-pages@v5
+        with:
+          target_branch: output
+          build_dir: dist
+          jekyll: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

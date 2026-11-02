@@ -1,0 +1,26 @@
+name: Latest blog posts
+
+on:
+  schedule:
+    - cron: "43 5 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v7
+      - name: List the latest DEVLOPN Audit articles
+        uses: gautamkrishnar/blog-post-workflow@v1
+        with:
+          feed_list: "https://audit.devlopn.com/blog/feed.xml"
+          max_post_count: 5
+          template: "- [$title]($url) <sub>· $date</sub>$newline"
+          date_format: "mmm d, yyyy"
+          commit_message: "chore: refresh latest blog posts"
+          committer_username: "github-actions[bot]"
+          committer_email: "41898282+github-actions[bot]@users.noreply.github.com"
