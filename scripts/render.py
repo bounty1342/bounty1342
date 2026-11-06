@@ -76,27 +76,32 @@ EXPERTISE = [
 
 EXPERIENCE = [
     dict(when="MAR 2025 — PRESENT", sector="AUTOMOTIVE & MOBILITY", company="Renault Digital",
+         image=dict(file="renault-800.webp", mode="cover", focus=(0.3, 0.5)),
          role="Senior Software Engineer · Freelance", current=True,
          text="Technical lead on the multi-brand Renault, Dacia and Alpine mobile app: "
               "architecture, remote internationalisation, CI/CD and quality.",
          tags=["Flutter / Dart", "Architecture", "CI/CD"]),
     dict(when="AUG 2022 — MAR 2025", sector="TRAVEL & MOBILITY", company="SNCF Connect & Tech",
+         image=dict(file="sncf-800.webp", mode="cover", focus=(0.45, 0.5)),
          role="Senior Developer Dart / Flutter", current=False,
          text="Architecture for a white-label ticket inspection and payment app. JustGo and "
               "Airweb: native integrations, scanning, unit, widget and golden tests, through "
               "to production launch.",
          tags=["Flutter / Dart", "AWS", "Firebase"]),
     dict(when="SINCE JAN 2023", sector="RARE DISEASE DETECTION", company="Zanalys",
+         image=dict(file="healthcare-800.webp", mode="cover", focus=(0.5, 0.2)),
          role="Senior Flutter developer · Healthcare", current=True,
          text="A medical solution for the early detection of rare diseases: application audit, "
               "real-time chat, biometric identification, notifications and error handling.",
          tags=["Flutter", "Firebase", "Product"]),
     dict(when="2019 — 2022", sector="CONNECTED SCREENS", company="Easivio",
+         image=dict(file="easivio.jpg", mode="blur", pad=0.92),
          role="Co-founder", current=False,
          text="Mobile widgets displayed on Android TV through the Easivio TV companion app, "
               "and Pixhella, a photo-sharing network with a print service.",
          tags=["Flutter", "Firebase", "Android TV"]),
     dict(when="OCT 2014 — NOV 2019", sector="COMPLEX SYSTEMS", company="Thales",
+         image=None,  # no public visual: a typographic tile is drawn instead
          role="Software engineering · Team management", current=False,
          text="Head of the SmartDisplay competence centre, a 60-person department. Delivery "
               "lead on ALLIOT international parcel tracking for La Poste and Swiss Post.",
@@ -543,6 +548,33 @@ def expertise(theme: str) -> Svg:
     return s
 
 
+THUMB_W, THUMB_H, THUMB_Y = 236, 132, 70
+
+
+def experience_thumb(s: Svg, t: dict, e: dict, i: int, x: float, y: float) -> None:
+    """Visual under the dates: the project artwork, or a typographic tile."""
+    s.defs.append(f'<clipPath id="exp{i}"><rect x="{x}" y="{y}" width="{THUMB_W}" height="{THUMB_H}" rx="14"/></clipPath>')
+    img = e.get("image")
+    if img:
+        uri = image_uri(img["file"], THUMB_W, THUMB_H, img["mode"], img.get("focus", (0.5, 0.5)),
+                        img.get("pad", 1.0), quality=78)
+        s.add(f'<image href="{uri}" x="{x}" y="{y}" width="{THUMB_W}" height="{THUMB_H}" '
+              f'preserveAspectRatio="xMidYMid slice" clip-path="url(#exp{i})"/>')
+    else:
+        s.add(f'<g clip-path="url(#exp{i})"><rect x="{x}" y="{y}" width="{THUMB_W}" height="{THUMB_H}" fill="{t["sage"]}"/>',
+              *[f'<line x1="{x + k * 24}" y1="{y}" x2="{x + k * 24}" y2="{y + THUMB_H}" stroke="{t["line"]}"/>'
+                for k in range(1, THUMB_W // 24 + 1)],
+              *[f'<line x1="{x}" y1="{y + k * 24}" x2="{x + THUMB_W}" y2="{y + k * 24}" stroke="{t["line"]}"/>'
+                for k in range(1, THUMB_H // 24 + 1)],
+              f'<circle cx="{x + THUMB_W - 34}" cy="{y + 34}" r="54" fill="{t["orange"]}" fill-opacity=".16"/>',
+              f'<rect x="{x + 20}" y="{y + 22}" width="8" height="8" fill="{t["orange"]}"/>',
+              s.text(x + 20, y + 72, e["company"].upper(), "sans", 30, 760, t["ink"], ls=1.5),
+              s.text(x + 20, y + 100, "SMARTDISPLAY · ALLIOT", "mono", 11.5, 600, t["orangeText"], ls=1.2),
+              "</g>")
+    s.add(f'<rect x="{x + .5}" y="{y + .5}" width="{THUMB_W - 1}" height="{THUMB_H - 1}" rx="13.5" '
+          f'fill="none" stroke="{t["line"]}"/>')
+
+
 def experience(theme: str) -> Svg:
     t = THEMES[theme]
     pad, rail, cx = 48, 318, 352
@@ -550,7 +582,7 @@ def experience(theme: str) -> Svg:
     rows, y = [], pad + 6
     for e in EXPERIENCE:
         lines = wrap(e["text"], tw, size=19)
-        hgt = 34 + 30 + len(lines) * 30 + 16 + 30
+        hgt = max(34 + 30 + len(lines) * 30 + 16 + 30, THUMB_Y + THUMB_H)
         rows.append((e, lines, y, hgt))
         y += hgt + 44
     h = y - 44 + pad
@@ -562,6 +594,7 @@ def experience(theme: str) -> Svg:
         s.add(f'<g class="rise" {delay(i * 0.1)}>',
               s.text(pad, y + 22, e["when"], "mono", 14, 600, t["ink"], ls=1.0),
               s.text(pad, y + 48, e["sector"], "mono", 12, 500, t["orangeText"], ls=1.2))
+        experience_thumb(s, t, e, i, pad, y + THUMB_Y)
         if e["current"]:
             s.add(f'<circle class="pulse" cx="{rail}" cy="{y + 16}" r="7" fill="{t["orange"]}"/>',
                   f'<circle cx="{rail}" cy="{y + 16}" r="7" fill="{t["orange"]}"/>')
