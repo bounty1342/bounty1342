@@ -237,9 +237,9 @@ def font_face(name: str, chars: set[str]) -> str:
     opts.flavor = "woff2"
     opts.layout_features = ["kern", "liga", "calt", "ccmp", "locl", "mark", "mkmk"]
     opts.notdef_outline = True
-    font = TTFont(FONT_FILES[name])
+    font = TTFont(FONT_FILES[name], recalcTimestamp=False)
     sub = subset.Subsetter(opts)
-    sub.populate(text="".join(chars) + " ")
+    sub.populate(text="".join(sorted(chars)) + " ")
     sub.subset(font)
     buf = io.BytesIO()
     font.flavor = "woff2"
