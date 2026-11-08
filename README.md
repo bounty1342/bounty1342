@@ -166,3 +166,7 @@
     <a href="https://audit.devlopn.com/">audit.devlopn.com</a>
   </sub>
 </p>
+
+<p align="center">
+  <img src="https://komarev.com/ghpvc/?username=bounty1342&label=profile%20views&color=e65c36&style=flat-square" alt="Profile views counter">
+</p>
